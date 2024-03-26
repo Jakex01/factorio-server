@@ -1,0 +1,14 @@
+version: '3'
+services:
+  factorio:
+    container_name: factorio-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "34197:34197/udp"
+      - "27015:27015/tcp"
+    volumes:
+      - ./saves:/factorio/saves
+      - ./config:/factorio/config
+      - ./mods:/factorio/mods
